@@ -1,0 +1,27 @@
+---
+# tasks file for hswong3i.webmin
+
+- name: apt-add-repository
+  apt_repository:
+    repo="{{ item }}"
+    state=present
+  with_items:
+    - deb http://download.webmin.com/download/repository sarge contrib
+    - deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib
+  tags: hswong3i.webmin
+
+- name: apt-key add
+  apt_key:
+    url="{{ item }}"
+    state=present
+  with_items:
+    - http://www.webmin.com/jcameron-key.asc
+  tags: hswong3i.webmin
+
+- name: apt-get install
+  apt:
+    name="{{ item }}"
+    state=latest
+  with_items:
+    - webmin
+  tags: hswong3i.webmin

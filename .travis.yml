@@ -1,0 +1,16 @@
+---
+
+language: python
+
+python: 2.7
+
+before_install:
+  - pip install ansible
+
+install:
+  - ansible-galaxy install -r .roles.yml
+
+script:
+  - ansible-playbook tests/test.yml -i tests/hosts --syntax-check
+  - ansible-playbook tests/test.yml -i tests/hosts --connection=local --sudo
+  - ansible-playbook tests/test.yml -i tests/hosts --connection=local --sudo | grep -q 'unreachable=0.*failed=0' && exit 0 || exit 1

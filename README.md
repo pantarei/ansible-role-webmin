@@ -63,8 +63,7 @@ Role Variables
 Dependencies
 ------------
 
--   [hswong3i.apt](https://github.com/pantarei/ansible-role-apt)
--   [hswong3i.ufw](https://github.com/pantarei/ansible-role-ufw)
+No additional role dependencies.
 
 Example Playbook
 ----------------

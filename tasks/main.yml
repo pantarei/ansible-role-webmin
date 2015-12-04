@@ -25,6 +25,7 @@
     name="{{ item }}"
     state=latest
   with_items:
+    - ufw
     - webmin
   notify: restart webmin
   tags: hswong3i.webmin

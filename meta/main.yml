@@ -11,6 +11,4 @@ galaxy_info:
     - trusty
   categories:
   - system
-dependencies:
-  - hswong3i.apt
-  - hswong3i.ufw
+dependencies: []

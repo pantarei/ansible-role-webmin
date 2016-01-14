@@ -11,7 +11,7 @@ Ansible Role for Webmin Installation.
 Requirements
 ------------
 
-This role require Ansible 1.9 or higher.
+This role require Ansible 2.0 or higher.
 
 This role was designed for Ubuntu Server 14.04 LTS.
 

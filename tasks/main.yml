@@ -3,30 +3,30 @@
 
 - name: apt-key add
   apt_key:
-    url="{{ item }}"
-    state=present
+    url={{ item.url }}
+    state={{ item.state }}
   with_items:
-    - http://www.webmin.com/jcameron-key.asc
+    - { url: 'http://www.webmin.com/jcameron-key.asc', state: 'present' }
   notify: restart webmin
   tags: hswong3i.webmin
 
 - name: apt-add-repository
   apt_repository:
-    repo="{{ item }}"
-    state=present
+    repo={{ item.repo }}
+    state={{ item.state }}
   with_items:
-    - deb http://download.webmin.com/download/repository sarge contrib
-    - deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib
+    - { repo: 'deb http://download.webmin.com/download/repository sarge contrib', state: 'present' }
+    - { repo: 'deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib', state: 'present' }
   notify: restart webmin
   tags: hswong3i.webmin
 
 - name: apt-get install
   apt:
-    name="{{ item }}"
-    state=latest
+    name={{ item.name }}
+    state={{ item.state }}
   with_items:
-    - ufw
-    - webmin
+    - { name: 'ufw', state: 'latest' }
+    - { name: 'webmin', state: 'latest' }
   notify: restart webmin
   tags: hswong3i.webmin
 
@@ -44,10 +44,10 @@
 
 - name: enable incomming connection
   ufw:
-    to_port={{ item }}
-    proto=tcp
-    rule=allow
+    to_port={{ item.to_port }}
+    proto={{ item.proto }}
+    rule={{ item.rule }}
   with_items:
-    - "{{ webmin_port }}"
+    - { to_port: "{{ webmin_port }}", proto: 'tcp', rule: 'allow' }
   notify: restart webmin
   tags: hswong3i.webmin

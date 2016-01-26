@@ -6,7 +6,7 @@
     url={{ item.url }}
     state={{ item.state }}
   with_items:
-    - { url: 'http://www.webmin.com/jcameron-key.asc', state: 'present' }
+    - { state: 'present', url: 'http://www.webmin.com/jcameron-key.asc' }
   notify: restart webmin
   tags: hswong3i.webmin
 
@@ -15,8 +15,8 @@
     repo={{ item.repo }}
     state={{ item.state }}
   with_items:
-    - { repo: 'deb http://download.webmin.com/download/repository sarge contrib', state: 'present' }
-    - { repo: 'deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib', state: 'present' }
+    - { state: 'present', repo: 'deb http://download.webmin.com/download/repository sarge contrib' }
+    - { state: 'present', repo: 'deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib' }
   notify: restart webmin
   tags: hswong3i.webmin
 
@@ -25,8 +25,8 @@
     name={{ item.name }}
     state={{ item.state }}
   with_items:
-    - { name: 'ufw', state: 'latest' }
-    - { name: 'webmin', state: 'latest' }
+    - { state: 'latest', name: 'ufw' }
+    - { state: 'latest', name: 'webmin' }
   notify: restart webmin
   tags: hswong3i.webmin
 

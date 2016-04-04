@@ -3,8 +3,8 @@
 
 - name: apt-key add
   apt_key:
-    url={{ item.url }}
-    state={{ item.state }}
+    url="{{ item.url }}"
+    state="{{ item.state }}"
   with_items:
     - { state: 'present', url: 'http://www.webmin.com/jcameron-key.asc' }
   notify: restart webmin
@@ -12,8 +12,8 @@
 
 - name: apt-add-repository
   apt_repository:
-    repo={{ item.repo }}
-    state={{ item.state }}
+    repo="{{ item.repo }}"
+    state="{{ item.state }}"
   with_items:
     - { state: 'present', repo: 'deb http://download.webmin.com/download/repository sarge contrib' }
     - { state: 'present', repo: 'deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib' }
@@ -22,8 +22,8 @@
 
 - name: apt-get install
   apt:
-    name={{ item.name }}
-    state={{ item.state }}
+    name="{{ item.name }}"
+    state="{{ item.state }}"
   with_items:
     - { state: 'latest', name: 'ufw' }
     - { state: 'latest', name: 'webmin' }
@@ -32,9 +32,9 @@
 
 - name: replace in file
   replace:
-    dest={{ item.dest }}
-    regexp={{ item.regexp }}
-    replace={{ item.replace }}
+    dest="{{ item.dest }}"
+    regexp="{{ item.regexp }}"
+    replace="{{ item.replace }}"
   with_items:
     - { dest: '/etc/webmin/miniserv.conf', regexp: '^listen=.*$', replace: "listen={{ webmin_listen }}" }
     - { dest: '/etc/webmin/miniserv.conf', regexp: '^port=.*$', replace: "port={{ webmin_port }}" }
@@ -44,9 +44,9 @@
 
 - name: enable incomming connection
   ufw:
-    to_port={{ item.to_port }}
-    proto={{ item.proto }}
-    rule={{ item.rule }}
+    to_port="{{ item.to_port }}"
+    proto="{{ item.proto }}"
+    rule="{{ item.rule }}"
   with_items:
     - { to_port: "{{ webmin_port }}", proto: 'tcp', rule: 'allow' }
   notify: restart webmin

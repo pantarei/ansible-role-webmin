@@ -2,4 +2,6 @@
 # handlers file for hswong3i.webmin
 
 - name: restart webmin
-  service: name=webmin state=restarted
+  service:
+    name: "webmin"
+    state: "restarted"

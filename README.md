@@ -28,34 +28,34 @@ Role Variables
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">parameter</th>
-<th align="left">required</th>
-<th align="left">default</th>
-<th align="left">choices</th>
-<th align="left">comments</th>
+<th>parameter</th>
+<th>required</th>
+<th>default</th>
+<th>choices</th>
+<th>comments</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">webmin_listen</td>
-<td align="left">yes</td>
-<td align="left">10000</td>
-<td align="left"></td>
-<td align="left">Pass value as <code>listen</code> to <code>/etc/webmin/miniserv.conf</code>.</td>
+<td>webmin_listen</td>
+<td>yes</td>
+<td>10000</td>
+<td></td>
+<td>Pass value as <code>listen</code> to <code>/etc/webmin/miniserv.conf</code>.</td>
 </tr>
 <tr class="even">
-<td align="left">webmin_port</td>
-<td align="left">yes</td>
-<td align="left">10000</td>
-<td align="left"></td>
-<td align="left">Pass value as <code>port</code> to <code>/etc/webmin/miniserv.conf</code>.</td>
+<td>webmin_port</td>
+<td>yes</td>
+<td>10000</td>
+<td></td>
+<td>Pass value as <code>port</code> to <code>/etc/webmin/miniserv.conf</code>.</td>
 </tr>
 <tr class="odd">
-<td align="left">webmin_ssl</td>
-<td align="left">yes</td>
-<td align="left">1</td>
-<td align="left"></td>
-<td align="left">Pass value as <code>ssl</code> to <code>/etc/webmin/miniserv.conf</code>.</td>
+<td>webmin_ssl</td>
+<td>yes</td>
+<td>1</td>
+<td></td>
+<td>Pass value as <code>ssl</code> to <code>/etc/webmin/miniserv.conf</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -82,6 +82,6 @@ Author Information
 ------------------
 
 -   Wong Hoi Sing Edison
-    -   <https://twitter.com/hswong3i>
-    -   <https://github.com/hswong3i>
+    -   <a href="https://twitter.com/hswong3i" class="uri" class="uri">https://twitter.com/hswong3i</a>
+    -   <a href="https://github.com/hswong3i" class="uri" class="uri">https://github.com/hswong3i</a>
 

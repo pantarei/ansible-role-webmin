@@ -1,6 +1,6 @@
 ---
 # defaults file for hswong3i.webmin
 
-webmin_listen: 10000
-webmin_port: 10000
-webmin_ssl: 1
+webmin_listen: "10000"
+webmin_port: "10000"
+webmin_ssl: "1"

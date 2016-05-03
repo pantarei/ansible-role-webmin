@@ -25,7 +25,6 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items:
-    - { state: "latest", name: "ufw" }
     - { state: "latest", name: "webmin" }
   notify: restart webmin
   tags: hswong3i.webmin
@@ -39,15 +38,5 @@
     - { dest: "/etc/webmin/miniserv.conf", regexp: "^listen=.*$", replace: "listen={{ webmin_listen }}" }
     - { dest: "/etc/webmin/miniserv.conf", regexp: "^port=.*$", replace: "port={{ webmin_port }}" }
     - { dest: "/etc/webmin/miniserv.conf", regexp: "^ssl=.*$", replace: "ssl={{ webmin_ssl }}" }
-  notify: restart webmin
-  tags: hswong3i.webmin
-
-- name: enable incomming connection
-  ufw:
-    to_port: "{{ item.to_port }}"
-    proto: "{{ item.proto }}"
-    rule: "{{ item.rule }}"
-  with_items:
-    - { to_port: "{{ webmin_port }}", proto: "tcp", rule: "allow" }
   notify: restart webmin
   tags: hswong3i.webmin

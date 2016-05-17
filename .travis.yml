@@ -12,9 +12,6 @@ before_install:
   - sudo apt-get update
   - sudo apt-get -y install ansible
 
-install:
-  - git clone https://github.com/pantarei/ansible-role-webmin.git ../hswong3i.webmin
-
 script:
   - sudo ansible-playbook tests/test.yml -i tests/hosts --syntax-check
   - sudo ansible-playbook tests/test.yml -i tests/hosts

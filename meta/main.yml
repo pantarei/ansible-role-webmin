@@ -1,4 +1,5 @@
 ---
+
 galaxy_info:
   author: Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
   description: Ansible Role for Webmin Installation.
@@ -6,9 +7,9 @@ galaxy_info:
   license: MIT
   min_ansible_version: 2.0
   platforms:
-  - name: Ubuntu
-    versions:
-    - trusty
-  categories:
-  - system
+    - name: Ubuntu
+      versions:
+        - trusty
+  galaxy_tags:
+    - system
 dependencies: []

@@ -4,7 +4,6 @@ Ansible Role for Webmin
 [![Build Status](https://travis-ci.org/pantarei/ansible-role-webmin.svg?branch=master)](https://travis-ci.org/pantarei/ansible-role-webmin)
 [![GitHub tag](https://img.shields.io/github/tag/pantarei/ansible-role-webmin.svg)](https://github.com/pantarei/ansible-role-webmin)
 [![GitHub license](https://img.shields.io/github/license/pantarei/ansible-role-webmin.svg)](https://github.com/pantarei/ansible-role-webmin/blob/master/LICENSE)
-[![Ansible Role](https://img.shields.io/ansible/role/6234.svg)](https://galaxy.ansible.com/detail#/role/6234)
 
 Ansible Role for Webmin Installation.
 

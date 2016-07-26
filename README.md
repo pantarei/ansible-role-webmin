@@ -12,7 +12,7 @@ Requirements
 
 This role require Ansible 2.0 or higher.
 
-This role was designed for Ubuntu Server 14.04 LTS.
+This role was designed for Ubuntu Server 14.04 LTS and Ubuntu Server 16.04 LTS.
 
 Role Variables
 --------------

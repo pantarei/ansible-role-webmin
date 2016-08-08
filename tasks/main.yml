@@ -10,7 +10,6 @@
     url: "{{ item.url }}"
     state: "{{ item.state }}"
   with_items: "{{ _apt_key }}"
-  notify: restart webmin
   tags: hswong3i.webmin
 
 - name: apt-add-repository
@@ -18,7 +17,6 @@
     repo: "{{ item.repo }}"
     state: "{{ item.state }}"
   with_items: "{{ _apt_repository }}"
-  notify: restart webmin
   tags: hswong3i.webmin
 
 - name: apt-get install

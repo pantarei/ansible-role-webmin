@@ -3,5 +3,7 @@
 
 - name: restart webmin
   service:
-    name: "webmin"
-    state: "restarted"
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items:
+    - { name: "webmin", state: "restarted" }
